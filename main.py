@@ -19,8 +19,8 @@ sku = st.text_input('Pesquisar sku')
 if not sku:
     st.stop()
 else:  
+    sku = (sku.replace(' ', '_') + '_lj').upper()
     if sku in lista_sku:  
-        sku = (sku.replace(' ', '_') + '_lj').upper()
         palete = df[df['SKU CAIXA'] == sku].iloc[0]['PALET (40 +-)']
         posicao = df[df['SKU CAIXA'] == sku].iloc[0]['POSIÇÃO (1 A 12)']
         st.metric(label='SKU', value=sku)   
