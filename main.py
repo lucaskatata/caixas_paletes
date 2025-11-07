@@ -31,4 +31,3 @@ else:
         st.warning('SKU não encontrado')
 
 # %%
-df[df['SKU CAIXA'] == 'M16_400_BRANCO_LJ']
