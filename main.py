@@ -21,10 +21,14 @@ if not sku:
 else:  
     sku = (sku.replace(' ', '_') + '_lj').upper()
     if sku in lista_sku:  
-        palete = df[df['SKU CAIXA'] == sku].iloc[0]['PALET (40 +-)']
+        palete = df[df['SKU CAIXA'] == sku]['PALET (40 +-)'].unique().tolist()
         posicao = df[df['SKU CAIXA'] == sku].iloc[0]['POSIÇÃO (1 A 12)']
         st.metric(label='SKU', value=sku)   
-        st.metric(label='Palete', value=palete)
+        # st.metric(label='Palete', value=palete)
+        st.text(f'Paletes: {palete}')
         st.metric(label='Posição', value=posicao)
     else:
         st.warning('SKU não encontrado')
+
+# %%
+df[df['SKU CAIXA'] == 'M16_400_BRANCO_LJ']
