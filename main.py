@@ -2,8 +2,9 @@
 import pandas as pd
 import streamlit as st
 import openpyxl
+from pathlib import Path
 
-arquivo = r"D:\Lucas\GitHub\caixas_paletes\dados.xlsx"
+arquivo = Path(r"D:\Lucas\GitHub\caixas_paletes\dados.xlsx")
 
 df = pd.read_excel(arquivo, sheet_name='tabela')
 
