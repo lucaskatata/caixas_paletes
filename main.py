@@ -1,11 +1,11 @@
 # %%
 import pandas as pd
 import streamlit as st
+import openpyxl
 
 arquivo = r"D:\Lucas\GitHub\caixas_paletes\dados.xlsx"
 
 df = pd.read_excel(arquivo, sheet_name='tabela')
-
 
 df['SKU CAIXA'] = df['SKU CAIXA'].str.upper()
 
