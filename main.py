@@ -1,8 +1,6 @@
 # %%
 import pandas as pd
 import streamlit as st
-import openpyxl
-from pathlib import Path
 
 
 df = pd.read_excel('dados.xlsx', sheet_name='tabela')
