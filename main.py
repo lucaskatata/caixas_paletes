@@ -14,7 +14,9 @@ lista_sku = df['SKU CAIXA'].unique()
 
 st.set_page_config(layout='wide', page_icon='📦', page_title='MF - localização caixas')
 
-sku = st.text_input('Pesquisar sku')
+col1, col2, col3 = st.columns(3)
+
+sku = col1.text_input('Pesquisar sku')
 
 if not sku:
     st.stop()
@@ -27,11 +29,10 @@ else:
         # st.metric(label='Palete', value=palete)
         # st.text(f'Paletes: {palete}')
 
-        col1, col2, col3, col4, col5 = st.columns(5)
+        col1, col2, col3 = st.columns(3)
 
-        col1.write('Palete:')
         for item in palete:
-            col1.write(item)
+            col1.metric(label='Palete', value=item)
 
         col2.metric(label='Posição', value=posicao)
     else:
