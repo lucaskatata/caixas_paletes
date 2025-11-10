@@ -25,7 +25,6 @@ else:
         sku = sku.removesuffix(' ')
     if sku.endswith('ã'):
         sku = sku.replace('ã', 'a')
-    print(sku) 
     sku = (sku.replace(' ', '_') + '_lj').upper()
     if sku in lista_sku:  
         palete = df[df['SKU CAIXA'] == sku]['PALET (40 +-)'].unique().tolist()
