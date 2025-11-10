@@ -25,8 +25,15 @@ else:
         posicao = df[df['SKU CAIXA'] == sku].iloc[0]['POSIÇÃO (1 A 12)']
         st.metric(label='SKU', value=sku)   
         # st.metric(label='Palete', value=palete)
-        st.text(f'Paletes: {palete}')
-        st.metric(label='Posição', value=posicao)
+        # st.text(f'Paletes: {palete}')
+
+        col1, col2, col3 = st.columns(3)
+
+        col1.write('Palete:')
+        for item in palete:
+            col1.write(item)
+
+        col2.metric(label='Posição', value=posicao)
     else:
         st.warning('SKU não encontrado')
 
