@@ -7,12 +7,12 @@ from pathlib import Path
 # arquivo = Path(r"D:\Lucas\GitHub\caixas_paletes\dados.xlsx")
 
 df = pd.read_excel('dados.xlsx', sheet_name='tabela')
+st.subheader('MF - Localização caixas paletes')
 
 df['SKU CAIXA'] = df['SKU CAIXA'].str.upper()
 lista_sku = df['SKU CAIXA'].unique()
 
 st.set_page_config(layout='wide', page_icon='📦', page_title='MF - localização caixas')
-st.title('MF - Localização caixas paletes')
 
 sku = st.text_input('Pesquisar sku')
 
