@@ -4,7 +4,6 @@ import streamlit as st
 import openpyxl
 from pathlib import Path
 
-# arquivo = Path(r"D:\Lucas\GitHub\caixas_paletes\dados.xlsx")
 
 df = pd.read_excel('dados.xlsx', sheet_name='tabela')
 st.subheader('MF - Localização caixas paletes')
