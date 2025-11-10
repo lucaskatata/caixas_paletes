@@ -27,8 +27,6 @@ else:
         palete = df[df['SKU CAIXA'] == sku]['PALET (40 +-)'].unique().tolist()
         posicao = df[df['SKU CAIXA'] == sku].iloc[0]['POSIÇÃO (1 A 12)']
         st.metric(label='SKU', value=sku)   
-        # st.metric(label='Palete', value=palete)
-        # st.text(f'Paletes: {palete}')
 
         col1, col2, col3 = st.columns(3)
 
