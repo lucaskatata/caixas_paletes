@@ -21,6 +21,11 @@ sku = col1.text_input('Pesquisar sku')
 if not sku:
     st.stop()
 else:  
+    if sku.endswith(' '):
+        sku = sku.removesuffix(' ')
+    if sku.endswith('ã'):
+        sku = sku.replace('ã', 'a')
+    print(sku) 
     sku = (sku.replace(' ', '_') + '_lj').upper()
     if sku in lista_sku:  
         palete = df[df['SKU CAIXA'] == sku]['PALET (40 +-)'].unique().tolist()
@@ -38,4 +43,3 @@ else:
     else:
         st.warning('SKU não encontrado')
 
-# %%
