@@ -27,7 +27,7 @@ else:
         # st.metric(label='Palete', value=palete)
         # st.text(f'Paletes: {palete}')
 
-        col1, col2, col3 = st.columns(3)
+        col1, col2, col3, col4, col5 = st.columns(5)
 
         col1.write('Palete:')
         for item in palete:
